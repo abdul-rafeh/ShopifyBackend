@@ -7,7 +7,10 @@ const mongoose = require("mongoose");
 const config = require("./config/config");
 const Joi = require("@hapi/joi");
 
-const server = new Hapi.Server(config.server);
+const server = new Hapi.Server({
+  port: process.env.PORT || 8888,
+  host: "0.0.0.0",
+});
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
