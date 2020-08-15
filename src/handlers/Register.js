@@ -13,7 +13,7 @@ const registerUser = (request) => {
     //   .catch(error => {
     //     resolve({ success: false, message: error });
     //   });
-    let user = new User(request.body);
+    let user = new User(request.payload);
     user
       .save()
       .then((response) => {
