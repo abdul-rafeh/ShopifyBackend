@@ -145,6 +145,14 @@ const start = async () => {
       auth: false,
     },
   });
+  server.route({
+    method: "POST",
+    path: "/register",
+    handler: handlers.registerUser,
+    config: {
+      auth: false,
+    },
+  });
   server.auth.default("jwt");
 
   await server.start((err) => {

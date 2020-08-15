@@ -1,16 +1,16 @@
 const User = require("../models/User");
 
-const loginUser = request => {
-  let promise = new Promise(resolve => {
+const loginUser = (request) => {
+  let promise = new Promise((resolve) => {
     User.findOne({ email: request.payload.email })
-      .then(response => {
+      .then((response) => {
         if (response && response.password === request.payload.password) {
           resolve({ success: true, message: response });
         } else {
           resolve({ success: false, message: "Invalid username or password" });
         }
       })
-      .catch(error => {
+      .catch((error) => {
         resolve({ success: false, message: error });
       });
   });

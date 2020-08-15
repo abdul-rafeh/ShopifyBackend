@@ -10,6 +10,7 @@
     "@hapi/hapi": "^18.4.0",
     "@hapi/joi": "^16.1.8",
     "bcrypt": "^3.0.7",
+    "dotenv": "^8.2.0",
     "hapi-auth-jwt2": "^8.8.1",
     "hapi-cors": "^1.0.3",
     "inert": "^5.1.3",

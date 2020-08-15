@@ -5,6 +5,7 @@ const updateProduct = require("./Products/UpdateProduct");
 const getSingleProduct = require("./Products/GetASingleProduct");
 const getReports = require("./Products/Reports");
 const loginUser = require("./Login");
+const registerUser = require("./Register");
 const orderProduct = require("./OrderItem");
 const addRating = require("./Products/AddRating");
 
@@ -17,5 +18,6 @@ module.exports = {
   getReports,
   loginUser,
   orderProduct,
-  addRating
+  addRating,
+  registerUser,
 };
