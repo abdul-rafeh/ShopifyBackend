@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Abdul Rafeh",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "@hapi/boom": "^8.0.1",
     "@hapi/hapi": "^18.4.0",
