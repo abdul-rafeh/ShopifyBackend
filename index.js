@@ -10,6 +10,8 @@ const Joi = require("@hapi/joi");
 const server = new Hapi.Server({
   port: process.env.PORT || 8888,
   host: "0.0.0.0",
+  timeout: false,
+  parse: true,
 });
 
 mongoose.connect(process.env.MONGODB_URI, {
