@@ -9,7 +9,7 @@ const Joi = require("@hapi/joi");
 
 const server = new Hapi.Server(config.server);
 
-mongoose.connect(config.database, {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
