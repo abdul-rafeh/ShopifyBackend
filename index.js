@@ -10,8 +10,6 @@ const Joi = require("@hapi/joi");
 const server = new Hapi.Server({
   port: process.env.PORT || 8888,
   host: "0.0.0.0",
-  timeout: false,
-  parse: true,
 });
 
 mongoose.connect(process.env.MONGODB_URI, {
@@ -70,6 +68,11 @@ const start = async () => {
     method: "POST",
     path: "/product",
     handler: handlers.addProduct,
+    options: {
+      payload: {
+        maxBytes: 52428800,
+      },
+    },
     config: {
       auth: false,
       validate: {
