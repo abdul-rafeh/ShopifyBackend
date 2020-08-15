@@ -12,7 +12,7 @@ const server = new Hapi.Server({
   host: "0.0.0.0",
 });
 
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI || config.database, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -68,11 +68,11 @@ const start = async () => {
     method: "POST",
     path: "/product",
     handler: handlers.addProduct,
-    options: {
-      payload: {
-        maxBytes: 52428800,
-      },
-    },
+    // options: {
+    //   payload: {
+    //     maxBytes: 52428800,
+    //   },
+    // },
     config: {
       auth: false,
       validate: {
